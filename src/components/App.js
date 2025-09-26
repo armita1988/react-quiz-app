@@ -104,7 +104,7 @@ function App() {
     userAnswer: null,
     obtainedPoints: 0,
     totalPoints: 0,
-    remainedTime: 30
+    remainedTime: 600
 
   }
 
@@ -112,7 +112,8 @@ function App() {
 
   useEffect(function () {
     dispatch({ type: 'dataIsLoading' })
-    fetch("http://localhost:8000/questions")
+    // fetch("http://localhost:8000/questions")
+    fetch("/questions.json")
       .then(res => {
         if (!res.ok) {
           throw new Error("something went wrong")
